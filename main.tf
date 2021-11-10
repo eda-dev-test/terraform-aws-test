@@ -1,16 +1,21 @@
 terraform {
   required_providers {
     aws = {
-      source = "erindatkinson/aws"
-      version = "6.6.6"
+      source = "hashicorp/aws"
+      version = "3.64.2"
     }
   }
 }
 
-provider "aws" {
+variable "name" {
+  type=string
 }
 
+variable "path" {
+  type=string
+}
 
-resource "aws_vpc" "this" {
-    name = "test"
+resource "aws_iam_group" "this_group" {
+  name = var.name
+  path = var.path
 }
