@@ -15,9 +15,6 @@ variable "key" {
   type = string
 }
 
-variable "path" {
-  type = string
-}
 
 resource "aws_key_pair" "these_keys" {
   name       = var.name
