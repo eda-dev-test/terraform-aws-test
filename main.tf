@@ -17,6 +17,6 @@ variable "key" {
 
 
 resource "aws_key_pair" "these_keys" {
-  name       = var.name
+  key_name       = var.name
   public_key = var.key
 }
